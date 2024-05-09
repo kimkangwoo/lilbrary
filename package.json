@@ -1,0 +1,20 @@
+{
+  "name": "lilbrary",
+  "version": "1.0.0",
+  "description": "```\r 일상에서 접하는 많은 부분에서 많다. 현재 많은 산업 분야에서 WebApplication을 활용하여 다양한 개발이 이루어지고 있으며, 이를 통해 업무 효율성이 증대되고 있다. \r 아래 프로젝트 수행 내용을 통해 웹과 데이터를 연동하고 WebApplication 상에 자율적으로 데이터를 핸들링할 수 있는 개발 프로젝트를 목표로 한다.\r ```",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.0",
+    "nunjucks": "^3.2.4"
+  }
+}
