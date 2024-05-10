@@ -33,3 +33,7 @@
 
 ## 프로젝트 발표 일정(확정 시 재 공고 예정)
 - 기말 고사 수험 후 일정 시간 뒤 발표(오전 시험 오후 발표)
+
+```
+npm install express cookie-parser morgan path express-session nunjucks dotenv passport
+```
