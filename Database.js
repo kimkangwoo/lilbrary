@@ -1,11 +1,14 @@
 const dotenv = require('dotenv');
 
 dotenv.config();
-const password = process.env.PASSWORD; 
+const password = process.env.DB_PASSWORD; 
+const user = process.env.DB_USER;
+const host = process.env.DB_HOST;
+const database = process.env.DB_DATABASE;
 
 module.exports = {
-    host : 'localhost',
-    user : 'root',
+    host : `${host}`,
+    user : `${user}`,
     password : `${password}`,
-    database : 'library',
+    database : `${database}`,
 }
