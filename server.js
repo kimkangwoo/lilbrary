@@ -24,9 +24,21 @@ nunjucks.configure('views', {
     watch : true,
 });
 
+// cookie-parser 미들웨어 사용
+app.use(cookieParser(dotenv.COOKIE_NAME));
+
 app.get('/', function(req, res){
     console.log("main 페이지 요청...");
-    res.send("페이지 표시 성공");
+
+  // 쿠키는 req.cookies 객체를 통해 읽을 수 있습니다.
+  console.log('요청된 쿠키:', req.cookies);
+  res.cookie('greeting', '741545465');
+  // 클라이언트에 응답을 보낼 수도 있습니다.
+  res.send('쿠키를 확인했습니다.');
+});
+
+app.get('/design', function(req, res){
+    res.render('main');
 });
 app.get('/db', function(req, res){
     connection.query("SELECT * FROM book;", function(err, row, fields){
