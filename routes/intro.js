@@ -4,8 +4,9 @@ const express = require('express');
 
 const router = express.Router();
 
+// //
 router.get('/', (req, res, next) => {
-    res.render('library');
+    res.render('intro');
 });
 
 module.exports = router;

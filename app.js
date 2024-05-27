@@ -27,11 +27,11 @@ nunjucks.configure('views', {
 
 // 라우터 정의
 app.use('/', intro_router); // 소개 페이지에 대한 라우터
-//app.use('/library', library_router); // 도서관 페이지에 대한 라우터
-//app.use('/insert', book_insert_router); // 책 추가에 대한 라우터
-//app.use('/delete', book_delete_router); // 책 삭제에 대한 라우터
-//app.use('/sign_in', sign_in_router); // 로그인에 대한 라우터
-//app.use('/sign_up', sign_up_router); // 회원가입에 대한 라우터
+app.use('/library', library_router); // 도서관 페이지에 대한 라우터
+app.use('/insert', book_insert_router); // 책 추가에 대한 라우터
+app.use('/delete', book_delete_router); // 책 삭제에 대한 라우터
+app.use('/sign_in', sign_in_router); // 로그인에 대한 라우터
+app.use('/sign_up', sign_up_router); // 회원가입에 대한 라우터
 
 // 404 에러 처리
 app.use((req, res, next) => {
