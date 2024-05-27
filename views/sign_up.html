@@ -1,1 +1,63 @@
 {% extends 'header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입</title>
+    <style>
+        .register-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="password"],
+        .register-container input[type="submit"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .register-container input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        .register-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <!-- 회원가입 폼 -->
+        <form id="register-form">
+            <input type="text" id="name" name="name" placeholder="이름" required>
+            <input type="text" id="email" name="email" placeholder="이메일" required>
+            <input type="password" id="password" name="password" placeholder="비밀번호" required>
+            <input type="submit" value="회원가입">
+        </form>
+        <p class="login-link">이미 회원이신가요? <a href="/login">로그인</a></p>
+    </div>
+    <script src="/js/register.js"></script> <!-- register.js 파일 경로 -->
+</body>
+</html>
+{% endblock %}

@@ -6,7 +6,9 @@ const router = express.Router();
 
 // /sign_in/
 router.get('/', (req, res, next) => {
-    res.render('sign_in');
+    res.render('sign_in', {
+        title : "개인 도서 관리 시스템 : 로그인"
+    });
 });
 
 module.exports = router;

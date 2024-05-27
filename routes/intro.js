@@ -6,7 +6,9 @@ const router = express.Router();
 
 // //
 router.get('/', (req, res, next) => {
-    res.render('intro');
+    res.render('intro', {
+        title : "개인 도서 관리 시스템 : 메인"
+    });
 });
 
 module.exports = router;

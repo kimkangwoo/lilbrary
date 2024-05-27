@@ -6,7 +6,9 @@ const router = express.Router();
 
 // /library/
 router.get('/', (req, res, next) => {
-    res.render('library');
+    res.render('library', {
+        title : '개인 도서 관리 시스템 : 서재'
+    });
 });
 
 module.exports = router;

@@ -1,1 +1,63 @@
 {% extends 'header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인</title>
+    <style>
+        /* CSS 스타일링 */
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="submit"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .login-container input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- 로그인 폼 -->
+        <form id="login-form">
+            <input type="text" id="email" name="email" placeholder="아이디" required>
+            <input type="password" id="password" name="password" placeholder="비밀번호" required>
+            <input type="submit" value="로그인">
+        </form>
+        <p class="signup-link">회원이 아니신가요? <a href="/register">회원가입</a></p>
+    </div>
+    <script src="/js/Login.js"></script> <!-- 경로 수정 -->
+</body>
+</html>
+{% endblock %}
