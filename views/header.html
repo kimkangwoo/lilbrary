@@ -1,10 +1,32 @@
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-
+    
+        <style>
+            /* h1 태그에 대한 스타일링 */
+            h1 {
+                text-align: center; /* 텍스트를 가운데 정렬 */
+                color: #333; /* 텍스트 색상 지정 */
+                font-size: 40px; /* 폰트 크기 지정 */
+                background: linear-gradient(to right, #87CEEB, white, #87CEEB);
+            }
+        </style>
     </head>
-{% endblock %}
+<header>
+    <!-- 표시 부 -->
+    <h1>서버시스템설계및구축 : 도서관</h1>
+    <br>
+    <a href="/">HOME</a>|
+    <a href="/search">LIBRARY</a> |
+    <a href="/inseart">BOOK INSERT</a> |
+    <a href="/delete">BOOK DELETE</a> |
+    <a href="/sign_up">SIGN UP</a> |
+    <a href="/sign_in">SIGN IN</a> |
+    <hr>
+</header>
+
+{%block content%}
+{%endblock%}
