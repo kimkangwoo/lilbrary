@@ -43,6 +43,7 @@
     }
     #magin{
         margin:10px;
+        margin-left: 40px;
     }
     #magi{
         background-color: #ffffff;
@@ -53,28 +54,33 @@
         background-color: #cdecfa; /* 배경 색상 지정 */
         margin:10px
     }
+    #insert_btn{
+        margin-left: 400px;
+    }
 </style>    
 
 
 <!-- 책 표시부 -->
+<form action="http://localhost:3000/insert" method="post">
     <div id="skyblue">
         <div id="myDiv">
                 <div id="imgdiv"></div> <!-- 이미지 부분 -->
             <div id="word">
-                <br>
-                <br>
-                <br>
-                <br>
-                <li id="magin">제목 : <input type="text" id="myInput" placeholder="추가할 책제목을 입력하세요"> </li>
-                <li id="magin">저자 : <input type="text" id="myInput" placeholder="추가할 책의 저자를 입력하세요"></li>
-                <li id="magin">출간연도 : <input type="text" id="myInput" placeholder="책의 출간연도를 입력하세요"></li>
-                <li id="magin">내용 : <input type="text" id="myInput"placeholder="상세 정보를 기입해주세요"></li>
-                <br>
-                <br>
+                <br><br><br>
+                <li id="magin">제목 : <input type="text" id="myInput" name="title" placeholder="추가할 책제목을 입력하세요"> </li>
+                <li id="magin">저자 : <input type="text" id="myInput" name="author" placeholder="추가할 책의 저자를 입력하세요"></li>
+                <li id="magin">출간연도 : <input type="text" id="myInput" name="date" placeholder="책의 출간연도를 입력하세요"></li>
+                <li id="magin">내용 : <input type="text" id="myInput" name="content" placeholder="상세 정보를 기입해주세요"></li>
                 <br>
                 <input type="file" accept="image/*">
                 <button onclick="uploadImage()">이미지 업로드</button>
+                <br><br>
+                <hr>
+                <input type="submit" id="insert_btn" value="책 추가하기">
             </div> 
         </div>
     </div>
+</form>
+
+
 {% endblock %}

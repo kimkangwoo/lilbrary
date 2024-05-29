@@ -6,12 +6,6 @@
     body, html {
         background-color: #f2f2f2; /* 배경 색상 지정 */
     }
-    /* 입력 상자에 대한 스타일링 */
-    #myInput {
-        width: 943px; /* 원하는 너비로 조절하세요 */
-        height: 30px; /* 높이 설정 */
-        align-self: flex-start; /* 상단 중앙 배치 */
-    }
     /* h1 태그에 대한 스타일링 */
     h1 {
         text-align: center; /* 텍스트를 가운데 정렬 */
@@ -35,8 +29,8 @@
         margin: 0 10px; /* 내부 요소 간 간격 설정 */
     }
     #word{
-        margin-top: 60;
-        margin-left: 40;
+        margin-top: 60px;
+        margin-left: 40px;
     }
     #box{
         width:500px;
@@ -60,22 +54,24 @@
 </style>    
 
 
-<div>
-    <input type="text" id="myInput" placeholder="여기에 입력하세요">
-</div>
-
-<!-- 책 표시부 -->
+{% if data.length > 0 %}
+    {% for book in data %}
+    <!-- 책 표시부 -->
     <div id="skyblue">
         <div id="myDiv">
             <div id="imgdiv">이미지</div> <!-- 이미지 부분 -->
             <div id="word">
-                <li id="magin">제목 : </li>
-                <li id="magin">저자 : </li>
-                <li id="magin">출간연도 : </li>
+                <li id="magin">제목 : {{book.book_name}}</li>
+                <li id="magin">저자 : {{book.book_author}}</li>
+                <li id="magin">출간연도 : {{book.book_date}}</li>
+                <li id="magin">등록일 : {{book.insert_date}}</li>
                 <div id="magi">
-                    <li id="box">내용 : </li>
+                    <li id="box">내용 : {{book.book_content}}</li>
                 </div>
             </div> <!-- 설명칸 부분 -->
         </div>
     </div>
+    {% endfor %}
+{% endif %}
+
 {% endblock %}

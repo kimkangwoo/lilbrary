@@ -15,9 +15,9 @@
 ### 공통 기능 25점(기본 점수 각 5점)
 - [ ] (5점)Database 연동 (Mysql or MongoDB) 
 - [ ] (5점)Cookie & Session 활용
-- [ ] (5점)Pug or Nunjucks를 활용한 웹 꾸미기
+- [x] (5점)Pug or Nunjucks를 활용한 웹 꾸미기
 - [ ] (5점)Login 구현
-- [ ] (5점)Route 구현
+- [x] (5점)Route 구현
 - [X] ***구현 시 체크 표시***
 ### 부가기능
 > 공통 기능 외 자율적인 기능 부가 

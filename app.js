@@ -1,6 +1,8 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
+const bodyParser = require('body-parser');
+
 
 // 라우터 가져오기
 const intro_router = require('./routes/intro');
@@ -24,6 +26,10 @@ nunjucks.configure('views', {
     express: app,
     watch: true,
 });
+
+// body-parser 미들웨어 설정
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // 라우터 정의
 app.use('/', intro_router); // 소개 페이지에 대한 라우터
