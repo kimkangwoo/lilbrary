@@ -25,9 +25,10 @@ router.post('/', (req, res, next) => {
             res.status(500).send('서버 오류');
             return;
         }
-        console.log("책의 정보가 성공적으로 입력되었습니다.");
-        res.redirect('/'); // 성공 시, 메인 페이지나 다른 페이지로 리다이렉트할 수 있습니다.
+        res.redirect('/insert'); // 성공 시, 메인 페이지나 다른 페이지로 리다이렉트할 수 있습니다.
     });
+
 });
+
 
 module.exports = router;
