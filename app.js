@@ -30,6 +30,7 @@ nunjucks.configure('views', {
 // body-parser 미들웨어 설정
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 라우터 정의
 app.use('/', intro_router); // 소개 페이지에 대한 라우터
