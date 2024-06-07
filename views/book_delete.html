@@ -69,13 +69,16 @@
         <div id="myDiv">
             <div id="imgdiv">이미지</div> <!-- 이미지 부분 -->
             <div id="word">
-                <li id="magin">제목 : </li>
-                <li id="magin">저자 : </li>
-                <li id="magin">출간연도 : </li>
+                <li id="magin">제목 : {{title}}</li>
+                <li id="magin">저자 : {{author}}</li>
+                <li id="magin">출간연도 : {{date}}</li>
                 <div id="magi">
-                    <li id="box">내용 : </li>
+                    <li id="box">내용 : {{content}}</li>
                 </div>
             </div> <!-- 설명칸 부분 -->
         </div>
     </div>
+
+<input type="button" id="search" value="책 확인하기">
+<input type="button" id="delete" value="책 삭제하기">
 {% endblock %}

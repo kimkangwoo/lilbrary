@@ -11,4 +11,17 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.post(query, (req, res, next)=>{
+    const { myinput } = req.body;
+    const query = `DELETE FROM ${user} WHERE book_name=${myinput};`
+
+    try{
+
+    }catch(err){
+        console.error(err);
+        res.status(500).send("can't Search book");
+        return res.redirect("/book");
+    }
+})
+
 module.exports = router;
