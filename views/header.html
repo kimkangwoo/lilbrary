@@ -1,32 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{title}}</title>
-    
-        <style>
-            /* h1 태그에 대한 스타일링 */
-            h1 {
-                text-align: center; /* 텍스트를 가운데 정렬 */
-                color: #333; /* 텍스트 색상 지정 */
-                font-size: 40px; /* 폰트 크기 지정 */
-                background: linear-gradient(to right, #87CEEB, white, #87CEEB);
-            }
-        </style>
-    </head>
-<header>
-    <!-- 표시 부 -->
-    <h1>서버시스템설계및구축 : 도서관</h1>
-    <br>
-    <a href="/">HOME</a>|
-    <a href="/library">LIBRARY</a> |
-    <a href="/insert">BOOK INSERT</a> |
-    <a href="/delete">BOOK DELETE</a> |
-    <a href="/sign_up">SIGN UP</a> |
-    <a href="/sign_in">SIGN IN</a> |
-    <hr>
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        header img {
+            width : 200px;
+            cursor: pointer;
+        }
+        .category {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .category ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .category ul li {
+            margin: 0 100px; /* 카테고리 간의 간격 조정 */
+            position: relative;
+            font-size: 18px; /* 메인 카테고리 글자 크기 */
+        }
+        .category ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .category ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            width: 150px;
+            padding: 10px;
+            text-align: left;
+        }
+        .category ul li:hover ul {
+            display: block;
+        }
+        .category ul li ul li {
+            display: block;
+            margin: 5px 0;
+            font-size: 16px; /* 하위 카테고리 글자 크기 */
+        }
+        .category ul li ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #loginStatus {
+            color: #fff;
+            font-size: 18px; /* 글자 크기 조정 */
+        }
+        #logoutButton {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        #logoutButton:hover {
+            color: #ff0000;
+        }
+    </style>
+    <script>
+        function logout() {
+            fetch('/logout', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/'; // 로그아웃 후 홈으로 이동
+                    }
+                });
+        }
 
-{%block content%}
-{%endblock%}
+        function checkLoginAndRedirect(url) {
+            fetch('/checkLogin')
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = url;
+                    } else {
+                        alert('로그인이 필요합니다.');
+                        window.location.href = '/login';
+                    }
+                });
+        }
+    </script>
+</head>
+<body>
+<header>
+    <img src="image.jpg" alt="lib_mng" onclick="window.location.href = '/'">
+    <div class="category">
+        <ul>
+            <li><a href="#">도서관리 소개</a>
+                <ul>
+                    <li><a href="#">도서관리시스템 소개</a></li>
+                    <li><a href="#">도서관리 사용법</a></li>
+                </ul>
+            </li>
+            <li><a href="#">도서</a>
+                <ul>
+                    <li><a href="#" onclick="checkLoginAndRedirect('/library')">도서</a></li>
+                    <li><a href="#" onclick="checkLoginAndRedirect('/insert')">도서 등록</a></li>
+                    <li><a href="#" onclick="checkLoginAndRedirect('/delete')">도서 삭제</a></li>
+                </ul>
+            </li>
+            <li><a href="#">고객문의</a>
+                <ul>
+                    <li><a href="/QA">Q&A</a></li>
+                    <li><a href="/m2">문의사항</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="loginStatus">
+        {% if user %}
+            {{ user.name }}님 반갑습니다.
+            <button id="logoutButton" onclick="logout()">로그아웃</button>
+        {% else %}
+            <a href="/login" style="color: #fff; text-decoration: underline;">로그인 하시겠습니까?</a>
+        {% endif %}
+    </div>
+</header>
+<hr>
+{% block content %}
+{% endblock %}
+</body>
+</html>

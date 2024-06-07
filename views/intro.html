@@ -1,1 +1,101 @@
 {% extends 'header.html' %}
+
+{% block content %}
+<style>
+    .container {
+        display: flex;
+        justify-content: center; /* 가로 중앙 정렬 */
+        height: 50vh; /* 전체 뷰포트 높이 */
+    }
+    /* 소개 섹션 스타일 */
+    #about {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f8f9fa;
+    }
+
+    #about h2 {
+        color: #007bff;
+    }
+
+    #about p {
+        line-height: 1.8;
+    }
+
+    /* 기능 섹션 스타일 */
+    #features {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    #features h2 {
+        color: #28a745;
+    }
+
+    #features ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    #features li {
+        margin-bottom: 10px;
+    }
+
+    #features li:before {
+        content: "\2022";
+        color: #28a745;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    /* 문의 섹션 스타일 */
+    #contact {
+        margin-top: 150px;
+        padding: 15px;
+        background-color: #b4ddf0;
+    }
+
+    #contact h2 {
+        color: #110002;
+    }
+
+    #contact p {
+        margin-bottom: 10px;
+    }
+</style>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src = "image.jpg">
+                <h2 >도서관리 시스템 소개</h2>
+                <li style="font-size:25px;">사용자의 도서들을 개인적인 전자 서재에 저장하여 목록을 확인할 수 있습니다.</li>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <span style="font-weight:900; font-size:100px; color:#28a745">
+                    ·   주요 기능   ·
+                </span>
+                <ul style = "display:flex; flex-direction:column; align-items:center; text-align:center;">
+                    <img src = "inser_book.png">
+                    <h2>- 1. 도서 등록 -</h2>
+                    <img src = "us.png">
+                    <h2>- 2. 사용자 등록 및 관리 -</h2>
+                    <img src = "bok_list.png">
+                    <h2>- 3. 도서 목록확인 -</h2>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
