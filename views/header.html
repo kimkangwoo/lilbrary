@@ -27,7 +27,7 @@
         .category {
             flex-grow: 1;
             display: flex;
-            justify-content: center;
+            justify-content: left;
         }
         .category ul {
             list-style-type: none;
@@ -114,12 +114,8 @@
     <img src="image.jpg" alt="lib_mng" onclick="window.location.href = '/'">
     <div class="category">
         <ul>
-            <li><a href="#">도서관리 소개</a>
-                <ul>
-                    <li><a href="#">도서관리시스템 소개</a></li>
-                    <li><a href="#">도서관리 사용법</a></li>
-                </ul>
-            </li>
+            <li><a href="#" onclick="window.location.href = '/'">도서관리 소개</a></li>
+
             <li><a href="#">도서</a>
                 <ul>
                     <li><a href="#" onclick="checkLoginAndRedirect('/library')">도서</a></li>
@@ -140,7 +136,7 @@
             {{ user.name }}님 반갑습니다.
             <button id="logoutButton" onclick="logout()">로그아웃</button>
         {% else %}
-            <a href="/login" style="color: #fff; text-decoration: underline;">로그인 하시겠습니까?</a>
+            <a href="/sign_in" style="color: #fff; text-decoration: underline;">로그인 하시겠습니까?</a>
         {% endif %}
     </div>
 </header>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A - 도서관리시스템</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            cursor: pointer;
+        }
+        #content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .qa-item {
+            margin-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            color: #333;
+        }
+        .answer {
+            margin-top: 5px;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="/path/to/your/logo.png" alt="로고" onclick="window.location.href = '/'">
+    <h1>Q&A</h1>
+</header>
+<div id="content">
+    <div class="qa-item">
+        <div class="question">Q1: 도서 관리 시스템에 어떻게 로그인하나요?</div>
+        <div class="answer">A1: 홈페이지 오른쪽 상단의 로그인 버튼을 클릭하여 아이디와 비밀번호를 입력하면 로그인할 수 있습니다.</div>
+    </div>
+    <div class="qa-item">
+        <div class="question">Q2: 도서를 등록하려면 어떻게 해야 하나요?</div>
+        <div class="answer">A2: 로그인 후, 상단 메뉴의 '도서 등록'을 클릭하여 도서 정보를 입력하면 됩니다.</div>
+    </div>
+    <div class="qa-item">
+        <div class="question">Q3: 도서를 삭제하려면 어떻게 해야 하나요?</div>
+        <div class="answer">A3: 로그인 후, 상단 메뉴의 '도서 삭제'를 클릭하여 삭제하려는 도서를 선택하면 됩니다.</div>
+    </div>
+</div>
+<footer>
+    &copy; 2024 도서관리시스템. All rights reserved.
+</footer>
+</body>
+</html>

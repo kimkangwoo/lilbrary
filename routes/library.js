@@ -17,7 +17,7 @@ connection.query('SELECT * FROM test_user', (error, res, field)=>{
 // /library/
 router.get('/', (req, res, next) => {
     res.render('library', {
-        title : '개인 도서 관리 시스템 : 서재',
+        title : 'libmng : 서재',
         data : data
     });
 });

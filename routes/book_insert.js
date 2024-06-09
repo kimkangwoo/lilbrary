@@ -8,7 +8,7 @@ const router = express.Router();
 // /insert/ 페이지를 렌더링합니다.
 router.get('/', (req, res, next) => {
     res.render('book_insert', {
-        title: "개인 도서 관리 시스템 : 책 추가"
+        title: "libmng : 책 추가"
     });
 });
 

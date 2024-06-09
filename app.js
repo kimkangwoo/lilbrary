@@ -2,7 +2,8 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const session = require('express-session');
+const passport = require('passport');
 
 // 라우터 가져오기
 const intro_router = require('./routes/intro');
