@@ -13,18 +13,18 @@
 
 ## 기능
 ### 공통 기능 25점(기본 점수 각 5점)
-- [ ] (5점)Database 연동 (Mysql or MongoDB) 
-- [ ] (5점)Cookie & Session 활용
+- [x] (5점)Database 연동 (Mysql or MongoDB) 
+- [x] (5점)Cookie & Session 활용
 - [x] (5점)Pug or Nunjucks를 활용한 웹 꾸미기
-- [ ] (5점)Login 구현
+- [x] (5점)Login 구현
 - [x] (5점)Route 구현
 - [X] ***구현 시 체크 표시***
 ### 부가기능
 > 공통 기능 외 자율적인 기능 부가 
 >> EX) SQL Injection 보안 기능
-- [ ] SQL Injection 보안 기능
-- [ ] 추가 기능 2
-- [ ] 추가 기능 3
+- [x] 책 추가
+- [x] 책 검색
+- [x] 책 삭제
 
 ## 평가
 - 팀 단위 평가 50% / 팀내 개인별 평가 50%
