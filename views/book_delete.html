@@ -2,17 +2,14 @@
 
 {% block content %}
 <style>
-    /* 부모 요소에 대한 스타일링 */
     body, html {
         background-color: #f2f2f2; /* 배경 색상 지정 */
     }
-    /* 입력 상자에 대한 스타일링 */
     #myInput {
         width: 943px; /* 원하는 너비로 조절하세요 */
         height: 30px; /* 높이 설정 */
         align-self: flex-start; /* 상단 중앙 배치 */
     }
-    /* h1 태그에 대한 스타일링 */
     h1 {
         text-align: center; /* 텍스트를 가운데 정렬 */
         color: #333; /* 텍스트 색상 지정 */
@@ -23,7 +20,7 @@
         padding: 20px; /* 내부 여백 설정 */
         display: flex; /* 가로로 배치하기 위해 flex 속성 추가 */
     }
-    #imgdiv{
+    #imgdiv {
         width: 300px; /* 원하는 너비로 조절하세요 */
         height: 400px; /* 높이 설정 */
         background-color: #58FAAC; /* 배경 색상 지정 */
@@ -34,34 +31,33 @@
     #myDiv > #wdiv {
         margin: 0 10px; /* 내부 요소 간 간격 설정 */
     }
-    #word{
-        margin-top: 60;
-        margin-left: 40;
+    #word {
+        margin-top: 60px; 
+        margin-left: 40px; 
     }
-    #box{
-        width:500px;
+    #box {
+        width: 500px;
         height: 200px;
         margin-block: 20px;
         margin-top: 20px;
-        margin-inline:20px;
+        margin-inline: 20px;
     }
-    #magin{
-        margin:10px;
+    #magin {
+        margin: 10px;
     }
-    #magi{
+    #magi {
         background-color: #ffffff;
-        width:500px;
+        width: 500px;
         height: 200px;
     }
-    #skyblue{
+    #skyblue {
         background-color: #cdecfa; /* 배경 색상 지정 */
-        margin:10px
+        margin: 10px; /* 세미콜론 추가 */
     }
 </style>    
 
-
 <div>
-    <input type="text" id="myInput" name="myInput" placeholder="삭제할 책제목을 입력하세요">
+    <input type="text" id="myInput" name="myInput" placeholder="삭제할 책 제목을 입력하세요">
     <input type="button" id="search" value="책 검색">
 </div>
 
@@ -69,4 +65,13 @@
 <!-- 검색 결과를 표시할 div 추가 -->
 <div id="results"></div>
 
+
+<script>
+    document.getElementById('myInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // 기본 Enter 키 동작 방지
+            document.getElementById('search').click(); // search 버튼 클릭
+        }
+    });
+    </script>
 {% endblock %}

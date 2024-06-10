@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
 
     // 책 삭제 이벤트
     if (req.body.message === 'clicked delete') {
-        const bookName = req.body.bookId; // 클라이언트 측과 일치시킴
+        const bookName = req.body.bookId; 
         const deleteQuery = 'DELETE FROM test_user WHERE book_name = ?';
         connection.query(deleteQuery, [bookName], (error, results) => {
             if (error) {

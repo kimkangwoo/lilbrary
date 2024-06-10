@@ -1,4 +1,4 @@
-document.getElementById('myInput').addEventListener('click', async () => {
+document.getElementById('search').addEventListener('click', async () => {
     try {
         const searchInput = document.getElementById('myInput').value;
         const response = await fetch('/delete', {
