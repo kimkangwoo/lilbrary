@@ -2,13 +2,21 @@ const express = require('express');
 const mysql = require('mysql');
 const database = require('../database');
 const connection = mysql.createConnection(database);
+const cookieParser = require('cookie-parser');
 
 const router = express.Router();
+router.use(cookieParser());
 
 // /insert/ 페이지를 렌더링합니다.
 router.get('/', (req, res, next) => {
+    if(req.cookies.user){
+        user =  JSON.parse(req.cookies.user);
+    }else{
+        user ="";
+    }
     res.render('book_insert', {
-        title: "libmng : 책 추가"
+        title: "libmng : 책 추가",
+        user : user,
     });
 });
 

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = registerForm.querySelector('#password').value;
 
         try {
-            const response = await fetch('/register', {
+            const response = await fetch('/sign_up', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('회원가입 성공!');
                 alert('회원가입 성공!');
                 // 회원가입 성공 후의 동작 추가 (예: 로그인 페이지로 리디렉션)
-                window.location.href = '/login';
+                window.location.href = '/sign_in';
             } else {
                 console.error('회원가입 실패:', responseText);
                 alert('회원가입 실패: ' + responseText);

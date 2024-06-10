@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = loginForm.querySelector('#password').value;
 
         try {
-            const response = await fetch('/login', {
+            const response = await fetch('/sign_in', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

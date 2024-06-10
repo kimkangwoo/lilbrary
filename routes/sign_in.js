@@ -16,11 +16,16 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.use((err, req, res, next)=>{
+    console.error(err);
+    res.status(500).send('로그인 도중 문제가 발생하였습니다.');
+})
+
 router.post('/', function(req, res) {
     const { email, password } = req.body;
     console.log('로그인 시도:', email, password); // 디버깅 로그 추가
 
-    connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], function(err, results) {
+    connection.query('SELECT * FROM users WHERE users_email = ? AND users_pw = ?', [email, password], function(err, results) {
         if (err) {
             console.error('로그인 실패:', err);
             res.status(500).send('로그인에 실패했습니다.');

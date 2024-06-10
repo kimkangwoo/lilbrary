@@ -2,8 +2,6 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const bodyParser = require('body-parser');
-const session = require('express-session');
-const passport = require('passport');
 
 // 라우터 가져오기
 const intro_router = require('./routes/intro');
@@ -12,8 +10,13 @@ const book_insert_router = require('./routes/book_insert');
 const book_delete_router = require('./routes/book_delete');
 const sign_in_router = require('./routes/sign_in');
 const sign_up_router = require('./routes/sign_up');
+const m2 = require('./routes/m2');
+const QA = require('./routes/QA');
+const checkLogin = require('./routes/checkLogin.js');
 
 const app = express();
+
+// cookies
 
 // 포트 설정
 app.set('port', 3000);
@@ -26,6 +29,12 @@ nunjucks.configure('views', {
     autoescape: true,
     express: app,
     watch: true,
+    });
+    
+app.post('/logout', function(req, res) {
+    res.clearCookie('user');
+    res.status(200).send("로그아웃 성공");
+    console.log('로그아웃')
 });
 
 // body-parser 미들웨어 설정
@@ -40,6 +49,9 @@ app.use('/insert', book_insert_router); // 책 추가에 대한 라우터
 app.use('/delete', book_delete_router); // 책 삭제에 대한 라우터
 app.use('/sign_in', sign_in_router); // 로그인에 대한 라우터
 app.use('/sign_up', sign_up_router); // 회원가입에 대한 라우터
+app.use('/m2', m2); // 로그인에 대한 라우터
+app.use('/qa', QA); // 회원가입에 대한 라우터
+app.use('/checkLogin', checkLogin); // 회원가입에 대한 라우터
 
 // 404 에러 처리
 app.use((req, res, next) => {
